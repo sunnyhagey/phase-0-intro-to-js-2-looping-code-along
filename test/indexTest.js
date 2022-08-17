@@ -21,6 +21,21 @@ describe( 'index.js', () => {
       ]);
     } );
   } );
+  function writeCards(names, event) {
+
+    const messages = [];
+   
+     for (let i = 0; i < names.length; i++) {
+       
+       const message = `Thank you, ${names[i]}, for the wonderful ${event} gift!`;
+   
+       messages.push(message);
+     }
+     return messages;
+   
+   }
+   console.log(writeCards(["Guadalupe", "Ollie", "Aki"], "birthday"))
+  
 
   describe( 'countDown()', () => {
     afterEach( () => {
@@ -32,6 +47,17 @@ describe( 'index.js', () => {
       expect( spy.callCount, "Expected countDown(10) to invoke 11 console.logs" )
         .to.eq( 11 );
     } );
+    let x = 9
+
+    function countDown(x){
+      while (x >= 0){
+        console.log(x--)
+      }
+      return x
+    }
+    
+    countDown(x)
+    
 
     it( 'logs each number when counting down, starting from the number provided', () => {
       countDown( 4 );
